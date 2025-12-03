@@ -27,10 +27,10 @@ function Login() {
 
     try {
       console.log('🔐 Intentando login para panel admin...');
-      console.log('URL:', 'http://127.0.0.1:8000/api/users/panel/login/');
+      console.log('URL:', `${process.env.REACT_APP_API_URL}/api/users/panel/login/`);
       console.log('Credenciales:', { username: formData.username, password: '***' });
 
-      const response = await fetch('http://127.0.0.1:8000/api/users/panel/login/', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/panel/login/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

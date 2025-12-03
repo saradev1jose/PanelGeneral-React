@@ -7,7 +7,8 @@ const AdminHome = ({ stats, userRole }) => {
   const [timeRange, setTimeRange] = useState('today');
   const [error, setError] = useState(null);
 
-  const API_BASE = 'http://localhost:8000/api';
+  // Base URL de la API desde variable de entorno
+  const API_BASE = process.env.REACT_APP_API_URL + '/api';
 
   const getAuthHeaders = () => {
     const token = localStorage.getItem('access_token');
